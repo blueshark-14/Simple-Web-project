@@ -3,6 +3,7 @@
 
   include("connection.php");
   include("functions.php");
+  //$user_data = check_login($con);
  
   if($_SERVER['REQUEST_METHOD'] == "POST")
   {
@@ -29,7 +30,7 @@
                     $_SESSION['user_id'] = $user_data['user_id'];
                     //redirect the user to index page
                    
-                    header("Location: Requirements.php");
+                    header("Location: PROFILE.php");
                     die;
                 } 
            } 

@@ -9,5 +9,5 @@ if(isset($_SESSION['user_id']))
 
 // redirect to login 
 
-header("Location: login.php");
+header("Location: HOME.php");
 

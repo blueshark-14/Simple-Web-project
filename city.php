@@ -35,7 +35,7 @@
 					<?php while($row =  mysqli_fetch_object($result) ) { ?>
 					<tr>
 						<td>  <?php echo $row->city  ?> </td>
-						<td> <?php echo $row->cnt  ?>   </td>
+						<td> <a href="showtable.php?cityName=<?php echo $row->city?>"> <?php echo $row->cnt ?>  </a> </td>
 						
 					</tr>
 					<?php } ?>

@@ -11,24 +11,21 @@
       //$password = $_POST['password'];
       
 
-      $company_name = $_POST['company_name'];
-      $job_title = $_POST['job_title'];
+      $name = $_POST['name'];
+      $age = $_POST['age'];
       $address = $_POST['address'];
       $city = $_POST['city'];
 
-      $country = $_POST['country'];
+      $email = $_POST['email'];
       $education = $_POST['education'];
-      $publish_date = $_POST['publish_date'];
-      $deadline = $_POST['deadline'];
-       
-      $user_id = $_SESSION['user_id'];
+      $id = $_GET['id'];
 
 
-      if(!empty($company_name) && !empty($job_title) && !empty($address) && !empty($city) && !empty($country) && !empty($education) && !empty($publish_date) && !empty($deadline) )
+      if(!empty($name) && !empty($age) && !empty($address) && !empty($city) && !empty($email) && !empty($education) )
       {
         //save to database
        // $id = random_num(20);
-        $query = "insert into requirements( company_name, job_title, address , city , country, education , publish_date, deadline, user_id ) values( '$company_name' , '$job_title' , '$address', '$city', '$country', '$education', '$publish_date', '$deadline' , '$user_id'); ";  
+        $query = "insert into application( name, age, address , city , email, education, job_id ) values( '$name' , '$age' , '$address', '$city', '$email', '$education' , $id); ";  
         
         mysqli_query($con , $query);
 
@@ -48,7 +45,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Requirements</title>
+    <title>application</title>
 </head>
 <body>
     <style type = "text/css">
@@ -77,17 +74,17 @@
 
   <div id="box">
       <form method="post">
-          <div style = "font-size: 20px ; margin : 10px; color: white;">Job Requirements</div><br>
+          <div style = "font-size: 20px ; margin : 10px; color: white;">Employee Details</div><br>
           
           
           <div>
-               <label>Company Name</label>
-               <input id="text" type = "text" name = "company_name" autocomplete="off" class="form-control"><br><br>
+               <label>Name</label>
+               <input id="text" type = "text" name = "name" autocomplete="off" class="form-control"><br><br>
            </div> 
 
            <div>
-               <label>Job Title</label>
-               <input id="text" type = "text" name = "job_title" autocomplete="off" class="form-control"><br><br>
+               <label>Age</label>
+               <input id="text" type = "text" name = "age" autocomplete="off" class="form-control"><br><br>
            </div> 
 
            <div>
@@ -99,35 +96,25 @@
                <label>City</label>
                <input id="text" type = "text" name = "city" autocomplete="off" class="form-control"><br><br>
            </div> 
-           <div>
-               <label>Country</label>
-               <input id="text" type = "text" name = "country" autocomplete="off" class="form-control"><br><br>
-           </div> 
+           
 
            <div>
                <label>Education</label>
                <input id="text" type = "text" name = "education" autocomplete="off" class="form-control"><br><br>
            </div> 
            
+           <div>
+               <label>Email</label>
+               <input id="text" type = "email" name = "email" autocomplete="off" class="form-control"><br><br>
+           </div> 
            
-           <div>
-               <label>Publish Date</label>
-               <input id="text" type = "date" name = "publish_date" autocomplete="off" class="form-control"><br><br>
-           </div> 
-
- 
-           <div>
-               <label>Deadline</label>
-               <input id="text" type = "date" name = "deadline" autocomplete="off" class="form-control"><br><br>
-           </div> 
-
           
           
           <input id="button" type = "submit" value = "Submit"><br><br>
           
       </form>
 
-      <a  href="PROFILE.php">Back</a><br><br>
+      <a  href="SEARCH.php">Back</a><br><br>
 
   </div>
 

@@ -1,11 +1,23 @@
 <?php 
-                  $connection = mysqli_connect('localhost', 'root', '', 'login_db');
-				  
-					  $search_key = $_GET['cityName'];
-				      $sql = "SELECT * FROM requirements WHERE city = '$search_key' ";
-					
-				  $result = mysqli_query($connection, $sql);
-  ?>
+
+session_start();
+
+if(isset($_SESSION['user_id']))
+{
+    $connection = mysqli_connect('localhost', 'root', '', 'login_db');
+    $user_id = $_SESSION['user_id'];
+    $sql = "SELECT * FROM requirements WHERE user_id = '$user_id' ";
+ 
+    $result = mysqli_query($connection, $sql);
+    
+    $sql2 = "SELECT count(*) as cnt FROM application WHERE job_id = '$user_id'";
+    $cnt  = mysqli_query($connection, $sql2); 
+}
+else echo "No user id found!";
+
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,14 +26,14 @@
 	<link rel="stylesheet" href="style3.css">
 	<link rel="stylesheet" href="style5ForBack.css">
 	<meta charset="UTF-8">
-	<title>Citywise Job</title>
+	<title>PHP Search</title>
 </head>
 <body>
-<a class="btn2"  href="city.php">Back</a><br><br>
+<a class="btn2"  href="PROFILE.php">Back</a><br><br>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2" style="margin-top: 5%;">
-				
+		
 				<table class="table table-bordered">
 					<tr>
 						
@@ -33,7 +45,8 @@
 						<th>Education</th>
 						<th>Publish Date</th>
 						<th>Deadline</th>
-
+                        <th>Total Applications</th>
+                          
 					</tr>
 					<?php while($row =  mysqli_fetch_object($result) ) { ?>
 					<tr>
@@ -46,6 +59,7 @@
 						<td>  <?php echo $row->education  ?> </td>
 						<td>  <?php echo $row->publish_date ?> </td>
 						<td>  <?php echo $row->deadline ?> </td>
+						<td>   </td>
 					</tr>
 					<?php } ?>
 				</table>

@@ -56,7 +56,7 @@
 						<th>Education</th>
 						<th>Publish Date</th>
 						<th>Deadline</th>
-
+                        <th>Application</th>   
 					</tr>
 					<?php while($row =  mysqli_fetch_object($result) ) { ?>
 					<tr>
@@ -69,6 +69,7 @@
 						<td>  <?php echo $row->education  ?> </td>
 						<td>  <?php echo $row->publish_date ?> </td>
 						<td>  <?php echo $row->deadline ?> </td>
+						<td>  <a href="apply.php?id=<?php echo $row->user_id ?>">apply</a> </td>
 					</tr>
 					<?php } ?>
 				</table>
