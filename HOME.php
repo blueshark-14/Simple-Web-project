@@ -1,3 +1,14 @@
+<?php 
+                  $connection = mysqli_connect('localhost', 'root', '', 'login_db');
+				    
+			    	$sql = "SELECT city,count(*) as cnt FROM requirements group by city";
+					
+				  $result = mysqli_query($connection, $sql);
+  ?>
+
+
+
+
 <!DOCTYPE html>
 <!--Code by Divinector (www.divinectorweb.com)-->
 <html lang="en">
@@ -7,7 +18,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>How to Create responsive Homepage</title>
+    <title>JOB HUNT</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">    
 </head>
@@ -23,26 +34,23 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-<!-- nav bar -->
-<ul class="nav-area">
-<li><a href="#">Home</a></li>
-<li><a href="#">About</a></li>
-<li><a href="copyHome.php">Job Find</a></li>
-<li><a href="newLogin.php">Employer</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
-
-
+        <!-- nav bar -->
+        <ul class="nav-area">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="SEARCH.php">Job Find</a></li>
+        <li><a href="LOGIN.php">Employer</a></li>
+        <li><a href="city.php">City Job</a></li>
+        </ul>
 
 </div> 
 
-
-<div class="welcome-text">
-        <h1>
-Many <span>Job</span> is here</h1>
-
-<a href="#">Contact US</a>
-    </div>
+    
+ <div class="welcome-text">
+        <h1> Many <span>Job</span> is here</h1>
+ 
+        <a href="#">Contact US</a>
+ </div>
 </header>
 
 </body>

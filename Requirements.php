@@ -129,7 +129,7 @@
           
       </form>
 
-      <a  href="newLogin.php">Back</a><br><br>
+      <a  href="LOGIN.php">Back</a><br><br>
 
   </div>
 

@@ -74,6 +74,17 @@ header {
 	background: #fff;
 	color: #333;
 }
+
+
+
+table{
+
+	width: 300px;
+    margin: 200px 50px;
+	box-shadow: -1px 12px 12px -6px rgba(0,0,0,0.5);
+
+}
+
 /*resposive*/
 
 @media (max-width:600px) {
@@ -87,7 +98,7 @@ header {
 		margin: auto;
 	}
 	img {
-		width: ;
+		width: 10 ;
 	}
 	.nav-area {
 		float: none;
@@ -109,3 +120,4 @@ header {
 		font-size: 30px;
 	}
 }
+

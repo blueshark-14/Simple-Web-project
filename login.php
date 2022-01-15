@@ -42,58 +42,40 @@
 
 ?>
 
+
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
-</head>
-<body>
-    <style type = "text/css">
-        #text{
-            height : 25px;
-            border-radius : 5px;
-            padding : 4px;
-            border : solid thin #aaa ;
-            width: 100% ;
-        }
-        #button{
-            padding: 10px;
-            width:  100px;
-            color: white;
-            background-color: lightblue;
-            border: none ;
-        }
-        #box{
-            background-color: grey;
-            margin: auto;
-            width: 300px;
-            padding: 20px;
-        }
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style2.css">
+  </head>
+  <body>
 
-    </style>
+ <!-- form start -->
+ <form method="post">
+            <div class="login-box">
+                <h1>Login</h1>
+                <div class="textbox">
+                    <i class="fas fa-user"></i>
+                    <input id="text" type = "text" name = "email_id" placeholder="Email Id">
+                </div>
 
-  <div id="box">
-      <form method="post">
-          <div style = "font-size: 20px ; margin : 10px; color: white;">Login</div><br>
-          
-         <div>
-             <label>Email Id</label>
-             <input id="text" type = "text" name = "email_id"><br><br>
-         </div>
-          
-          <div>
-             <label>Password</label>
-             <input id="text" type = "password" name = "password"><br><br>
-          </div>
-               
-          
-          <input id="button" type = "submit" value = "login"><br><br>
-          <a href="signup.php">Click to Signup</a><br><br>
+                <div class="textbox">
+                    <i class="fas fa-lock"></i>
+                    <input id="text" type = "password" name = "password" placeholder="Password">
+                </div>
+
+                <input id="button" type="submit" class="btn" value="Sign in">
+            
+                <a class="btn2" href="signup.php">Click to Signup</a><br><br>
+                <a class="btn2" href="HOME.php">Back</a><br><br>
+            </div>
+                   
       </form>
-  </div>
 
-</body>
+
+
+  </body>
 </html>
