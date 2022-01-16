@@ -10,8 +10,7 @@ if(isset($_SESSION['user_id']))
  
     $result = mysqli_query($connection, $sql);
     
-    $sql2 = "SELECT count(*) as cnt FROM application WHERE job_id = '$user_id'";
-    $cnt  = mysqli_query($connection, $sql2); 
+   
 }
 else echo "No user id found!";
 
@@ -59,7 +58,18 @@ else echo "No user id found!";
 						<td>  <?php echo $row->education  ?> </td>
 						<td>  <?php echo $row->publish_date ?> </td>
 						<td>  <?php echo $row->deadline ?> </td>
-						<td>   </td>
+						<td>  
+							<a href="showApplication.php?job_id=<?php echo $row->id?>"><?php
+						
+									$sql2 = "SELECT count(*) as cnt FROM application WHERE job_id = '$row->id' ";
+									$res  = mysqli_query($connection, $sql2); 
+									$row2 =  mysqli_fetch_object($res);
+									echo $row2->cnt;
+						
+						     ?> </a>
+					        
+					
+					    </td>
 					</tr>
 					<?php } ?>
 				</table>

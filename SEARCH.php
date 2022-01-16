@@ -69,7 +69,7 @@
 						<td>  <?php echo $row->education  ?> </td>
 						<td>  <?php echo $row->publish_date ?> </td>
 						<td>  <?php echo $row->deadline ?> </td>
-						<td>  <a href="apply.php?id=<?php echo $row->user_id ?>">apply</a> </td>
+						<td>  <a href="apply.php?id=<?php echo $row->id ?>">apply</a> </td>
 					</tr>
 					<?php } ?>
 				</table>
