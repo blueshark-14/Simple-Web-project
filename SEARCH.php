@@ -1,17 +1,18 @@
 <?php 
-                  $connection = mysqli_connect('localhost', 'root', '', 'login_db');
+               session_start();
+
+			     $connection = mysqli_connect('localhost', 'root', '', 'login_db');
 				  
                   if(isset($_POST['search'])){
 					  $search_key = $_POST['search'];
 				      $sql = "SELECT * FROM requirements WHERE job_title LIKE '%$search_key%' ";
+					  setcookie('searchKey', $search_key, time()+(60) );
 					} else 
 					{
 						$sql = "SELECT * FROM requirements";
 						$search_key="";
-					}
-				
-				  //setcookie('searchKey', $search_key, time()+3);
-				  //echo $_COOKIE['searchKey'];
+					}			 
+				  
 				  $result = mysqli_query($connection, $sql);
   ?>
 
@@ -45,6 +46,20 @@
 				<br>
 				<br>
 				</div>
+
+               <!-- cookies here -->
+                <div style="color:white" >
+                <?php 
+				   
+				   if(isset($_COOKIE['searchKey'])){
+					   echo "Your last searched is " .  $_COOKIE['searchKey'] . ".";
+				    }
+				  
+				?>
+				</div>
+
+			   <!-- table here -->
+
 				<table class="table table-bordered">
 					<tr>
 						
