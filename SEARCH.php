@@ -6,7 +6,7 @@
                   if(isset($_POST['search'])){
 					  $search_key = $_POST['search'];
 				      $sql = "SELECT * FROM requirements WHERE job_title LIKE '%$search_key%' ";
-					  setcookie('searchKey', $search_key, time()+(60) );
+					 if( strlen($search_key)>0 ) setcookie('searchKey', $search_key, time()+(60) );
 					} else 
 					{
 						$sql = "SELECT * FROM requirements";
@@ -52,7 +52,7 @@
                 <?php 
 				   
 				   if(isset($_COOKIE['searchKey'])){
-					   echo "Your last searched is " .  $_COOKIE['searchKey'] . ".";
+					   echo "Your last searched is ' " .  $_COOKIE['searchKey'] . " '.";
 				    }
 				  
 				?>
