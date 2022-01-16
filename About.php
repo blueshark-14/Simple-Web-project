@@ -10,8 +10,7 @@
     <h1>About Us</h1>
     <p>
         Hey !! we are here to serve you a better experiance!!
-        Do you like our website??
-        bye ! bye !
+        
     </p>
 </body>
 </html>

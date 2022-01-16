@@ -37,7 +37,7 @@
         <!-- nav bar -->
         <ul class="nav-area">
         <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="About.php">About</a></li>
         <li><a href="SEARCH.php">Job Find</a></li>
         <li><a href="checkLogin.php">Employer</a></li>
         <li><a href="city.php">City Job</a></li>
@@ -47,9 +47,9 @@
 
     
  <div class="welcome-text">
-        <h1> Many <span>Job</span> is here</h1>
+        <h1> Many <span>Jobs</span> are here</h1>
  
-        <a href="#">Contact US</a>
+        <a href="contact.php">Contact US</a>
  </div>
 </header>
 
