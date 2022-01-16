@@ -13,7 +13,9 @@
   
   <a class="btn2" href="ShowMyJob.php">Show My Job</a> <br><br><br><br>
   
-  <a class="btn2" href="HOME.php">Back</a><br><br>
+  <a class="btn2" href="HOME.php">Back</a><br><br><br><br>
+
+  <a class="btn2" href="logout.php">Logout</a><br><br>
   
 </div>
         

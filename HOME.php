@@ -39,7 +39,7 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="SEARCH.php">Job Find</a></li>
-        <li><a href="LOGIN.php">Employer</a></li>
+        <li><a href="checkLogin.php">Employer</a></li>
         <li><a href="city.php">City Job</a></li>
         </ul>
 

@@ -33,10 +33,15 @@
         mysqli_query($con , $query);
 
         //redirect the user to login page
-         header("Location: successful.php");
-        die;
+        // header("Location: successful.php");
+        //die;
+         
+        $alert = "<script>alert('Successfully Submitted!');</script>";
+        echo $alert;
 
-    }else { echo "Please enter some valid information!";} 
+    }else { $alert = "<script>alert('Please enter some valid information!');</script>";
+        echo $alert;
+    } 
     
 }
 
