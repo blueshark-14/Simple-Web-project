@@ -69,7 +69,16 @@
 						<td>  <?php echo $row->education  ?> </td>
 						<td>  <?php echo $row->publish_date ?> </td>
 						<td>  <?php echo $row->deadline ?> </td>
-						<td>  <a href="apply.php?id=<?php echo $row->id ?>">apply</a> </td>
+						<td>
+						<?php	
+						   $today = date("Y-m-d");
+						  if($row->publish_date <= $today and $row->deadline >= $today )
+						  { ?>
+							<a href="apply.php?id=<?php echo $row->id ?>">apply</a>
+						 <?php }else {echo "apply";} ?>
+						   
+					
+					    </td>
 					</tr>
 					<?php } ?>
 				</table>
