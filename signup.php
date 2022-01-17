@@ -21,10 +21,11 @@
         mysqli_query($con , $query);
 
         //redirect the user to login page
-         header("Location: newLogin.php");
+         header("Location: LOGIN.php");
         die;
 
-    }else { echo "Please enter some valid information!";} 
+    }else {$alert = "<script>alert('Please enter some valid information!');</script>";
+        echo $alert;} 
     
 }
 
@@ -89,7 +90,7 @@
 
         
           <input id="button" type = "submit" value = "Signup"><br><br>
-          <a href="newLogin.php">Click to login</a><br><br>
+          <a href="LOGIN.php">Click to login</a><br><br>
       </form>
   </div>
 
